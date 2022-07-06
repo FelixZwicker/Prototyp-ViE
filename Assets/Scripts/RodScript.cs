@@ -5,15 +5,14 @@ using UnityEngine;
 public class RodScript : MonoBehaviour
 {
     public GameObject Rod;
+    public Material BurningMaterial;
 
-    private Material BurningMaterial;
-    private MeshRenderer MeshRenderer;
+    private MeshRenderer meshRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        BurningMaterial = Resources.Load<Material>("BurningRed");
-        MeshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -34,6 +33,6 @@ public class RodScript : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
 
-        MeshRenderer.material = BurningMaterial;
+        meshRenderer.material = BurningMaterial;
     }
 }

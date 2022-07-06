@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Molham.unity
+    guid: ae7787441bbded448a320d0cfaac93ed
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9399ce0f1205c8341bce53376b3c615b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8f7dc9bb812077c45b8dca8932f1fbd7, type: 2}

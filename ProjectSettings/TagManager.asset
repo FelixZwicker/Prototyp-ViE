@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Button
   - RoomLight
+  - Burner
+  - powder
   layers:
   - Default
   - TransparentFX
