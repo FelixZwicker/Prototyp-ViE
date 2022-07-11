@@ -4,35 +4,76 @@ using UnityEngine;
 
 public class ShakingScript : MonoBehaviour
 {
-    public GameObject interactable;
+    public GameObject Interactable;
+    public GameObject SecondChem;
+    public GameObject WrongChem;
+    public GameObject CheckmarkGlassFilled;
+    public GameObject CheckmarkMixed;
+    public GameObject CheckmarkGlassEmpty;
+    public bool mixed;
     private float xOld;
     private float xNew;
     private float zOld;
     private float zNew;
+    private float currentXPos;
+    private float currentZPos;
     private int countSwivel;
+    public Material newChemicalMaterial;
+    MeshRenderer meshRenderer;
+    MeshRenderer secondMeshRenderer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        xOld = interactable.transform.position.x;
-        zOld = interactable.transform.position.z;
+        xOld = Interactable.transform.position.x;
+        zOld = Interactable.transform.position.z;
+        meshRenderer = GetComponent<MeshRenderer>();
+        secondMeshRenderer = SecondChem.GetComponent<MeshRenderer>();
+        mixed = false;
         countSwivel = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float currentXPos = interactable.transform.position.x;
-        float currentZPos = interactable.transform.position.z;
-        CheckSwivel(currentXPos, currentZPos);
+        currentXPos = Interactable.transform.position.x;
+        currentZPos = Interactable.transform.position.z;
+    }
 
-        if(countSwivel == 3)
+    private void OnTriggerEnter(Collider other)
+    {
+        //chemicals are colliding
+        if(other.gameObject.name == SecondChem.name)
         {
-            Debug.Log("done");
+            CheckSwivel(currentXPos, currentZPos);
+
+            if (countSwivel == 3)
+            {
+                meshRenderer.material = newChemicalMaterial;
+                secondMeshRenderer.material = newChemicalMaterial;
+                CheckmarkMixed.SetActive(true);
+                //used by RodScript
+                mixed = true;
+            }
+        }
+
+        if(other.gameObject.name == WrongChem.name)
+        {
+            Debug.Log("Wrong Chem, start again");
+        }
+
+        //chemicals in glass
+        if(other.gameObject.tag == "Glass")
+        {
+            CheckmarkGlassFilled.SetActive(true);
+        }
+
+        //Chemical on plate
+        if(other.gameObject.tag == "Plate" && mixed == true)
+        {
+            CheckmarkGlassEmpty.SetActive(true);
         }
     }
 
-    int CheckSwivel(float xNewPosition, float xOldPosition)
+    public int CheckSwivel(float xNewPosition, float xOldPosition)
     {
         xNew = xNewPosition;
         zNew = xOldPosition;
@@ -40,7 +81,7 @@ public class ShakingScript : MonoBehaviour
         float xCompare = Mathf.Abs(xOld) - Mathf.Abs(xNew);
         float zCompare = Mathf.Abs(zOld) - Mathf.Abs(zNew);
 
-        if (Mathf.Abs(xCompare) > 0.08f || Mathf.Abs(zCompare) > 0.08f)
+        if (Mathf.Abs(xCompare) > 0.01f || Mathf.Abs(zCompare) > 0.01f)
         {
             countSwivel++;
         }

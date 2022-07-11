@@ -5,33 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/DistanceGrab.unity
-    guid: 3c2b9e5bdd27a8247b384673cdad70bb
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicGrab.unity
-    guid: 13bd76582a631124699f410c1e007f8c
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicGestures.unity
-    guid: b6ca90bab3eb56844a3c394f95246150
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicPoke.unity
-    guid: e6661efa421761b4299803adcd8c1c9a
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicPoseDetection.unity
-    guid: 5661873a4cd8ad8469c072d3852197c2
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicRay.unity
-    guid: 7e040656f12f8dc44a6d88406081f26c
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/ComplexGrab.unity
-    guid: b4db51bf4876fde4ebaca05af639db73
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Molham.unity
-    guid: ae7787441bbded448a320d0cfaac93ed
+    path: Assets/Scenes/StartingScene.unity
+    guid: 9ec8475a230e15545981bc34cc2cc49d
+  - enabled: 1
+    path: Assets/Scenes/Experimental.unity
+    guid: d9405ae884156bd42b95e37a7b81f8cf
+  - enabled: 1
+    path: Assets/Scenes/ExperimentOne.unity
+    guid: 800bb29b3ffebec41a1fa9088ab1df35
+  - enabled: 1
+    path: Assets/Scenes/ExperimentThree.unity
+    guid: c464148bd23c1f149a69c8b1293f9890
+  - enabled: 1
+    path: Assets/Scenes/ExperimentTwo.unity
+    guid: 992228a6c77b8e44581c1fb5d1c66912
+  - enabled: 1
+    path: Assets/Scenes/QuizWrong.unity
+    guid: ce9b0c95275048340a4666a3277cbeae
+  - enabled: 1
+    path: Assets/Scenes/QuizRight.unity
+    guid: 3886ec2e0252a7a4cb8384b23d0fbf41
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9399ce0f1205c8341bce53376b3c615b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8f7dc9bb812077c45b8dca8932f1fbd7, type: 2}

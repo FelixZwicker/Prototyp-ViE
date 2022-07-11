@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
-  - RoomLight
   - Burner
   - powder
+  - Glass
+  - Plate
+  - Tube
   layers:
   - Default
   - TransparentFX
